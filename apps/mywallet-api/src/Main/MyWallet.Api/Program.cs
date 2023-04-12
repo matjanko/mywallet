@@ -1,6 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using MyWallet.Debts;
+using MyWallet.Infrastructure;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructure();
+builder.Services.AddDebts();
+
+var app = builder.Build();
+app.UseInfrastructure();
 
 app.Run();
