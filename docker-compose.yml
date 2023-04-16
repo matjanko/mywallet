@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  mywallet-api:
+    build: apps/mywallet-api
+    container_name: mywallet-api
+    restart: unless-stopped
+    ports:
+      - 5000:80
+    networks:
+    - mywallet
+    
+  mywallet-web:
+    build: apps/mywallet-web
+    container_name: mywallet-web
+    restart: unless-stopped
+    ports:
+      - 5100:80
+    networks:
+      - mywallet
+
+networks:
+  mywallet:
+    name: mywallet-network
+    
