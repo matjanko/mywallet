@@ -4,6 +4,19 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>551a3eb0-7603-4310-81db-929f890c636c</UserSecretsId>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Modules\Debts\MyWallet.Debts\MyWallet.Debts.csproj" />
+      <ProjectReference Include="..\..\Shared\MyWallet.Infrastructure\MyWallet.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
 
 </Project>
