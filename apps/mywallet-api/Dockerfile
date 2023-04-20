@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY *.sln .
 COPY ./src/Main/MyWallet.Api/MyWallet.Api.csproj ./src/Main/MyWallet.Api/
+COPY ./src/Modules/Debts/MyWallet.Debts/MyWallet.Debts.csproj ./src/Modules/Debts/MyWallet.Debts/
+COPY ./src/Shared/MyWallet.Infrastructure/MyWallet.Infrastructure.csproj ./src/Shared/MyWallet.Infrastructure/
 RUN dotnet restore 
 
 COPY . ./
