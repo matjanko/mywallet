@@ -1,4 +1,4 @@
-namespace MyWallet.Debts.Entities;
+namespace MyWallet.Debts.Domain.Entities;
 
 public class Loan
 {

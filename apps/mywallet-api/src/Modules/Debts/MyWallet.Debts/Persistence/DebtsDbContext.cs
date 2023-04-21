@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MyWallet.Debts.Entities;
+using MyWallet.Debts.Domain.Entities;
 
-namespace MyWallet.Debts.DAL;
+namespace MyWallet.Debts.Persistence;
 
 internal sealed class DebtsDbContext : DbContext
 {
