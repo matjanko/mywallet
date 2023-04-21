@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MyWallet.Debts.Entities;
+using MyWallet.Debts.Domain.Entities;
 
-namespace MyWallet.Debts.DAL.Configurations;
+namespace MyWallet.Debts.Persistence.Configurations;
 
 internal class LoanConfiguration : IEntityTypeConfiguration<Loan>
 {

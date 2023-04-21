@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.DependencyInjection;
 using MyWallet.Debts.DAL;
+using MyWallet.Debts.Persistence;
 using MyWallet.Infrastructure.Postgres;
 
 [assembly: InternalsVisibleTo("MyWallet.Api")]

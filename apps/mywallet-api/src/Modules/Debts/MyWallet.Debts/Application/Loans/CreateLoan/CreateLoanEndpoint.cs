@@ -1,9 +1,9 @@
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization;
-using MyWallet.Debts.DAL;
-using MyWallet.Debts.Entities;
+using MyWallet.Debts.Domain.Entities;
+using MyWallet.Debts.Persistence;
 
-namespace MyWallet.Debts.Features.Loans.CreateLoan;
+namespace MyWallet.Debts.Application.Loans.CreateLoan;
 
 [HttpPost("loans")]
 [AllowAnonymous]

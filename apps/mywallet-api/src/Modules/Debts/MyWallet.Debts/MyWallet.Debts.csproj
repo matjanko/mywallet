@@ -32,4 +32,8 @@
       <ProjectReference Include="..\..\..\Shared\MyWallet.Infrastructure\MyWallet.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Domain\" />
+    </ItemGroup>
+
 </Project>
