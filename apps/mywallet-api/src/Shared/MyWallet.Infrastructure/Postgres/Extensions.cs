@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyWallet.Abstractions.Dabatase;
 using MyWallet.Infrastructure.Options;
 
 namespace MyWallet.Infrastructure.Postgres;
@@ -16,15 +17,19 @@ public static class Extensions
         {
             c.UseNpgsql(options.ConnectionString);
         });
+
+        services.AddScoped<ISqlConnectionFactory>(_ => new NpgsqlConnectionFactory(options.ConnectionString));
         
         var provider = services.BuildServiceProvider();
         var environment = provider.GetRequiredService<IWebHostEnvironment>();
 
-        if (environment.IsDevelopment())
+        if (!environment.IsDevelopment())
         {
-            var context = provider.GetRequiredService<TContext>();
-            context.Database.Migrate();
+            return services;
         }
+        
+        var context = provider.GetRequiredService<TContext>();
+        context.Database.Migrate();
         return services;
     }
 }
