@@ -1,7 +1,9 @@
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using MyWallet.Debts.Domain.Entities;
 using MyWallet.Debts.Persistence;
+using MyWallet.Debts.Shared.Dto;
 
 namespace MyWallet.Debts.Application.Loans.CreateLoan;
 
@@ -18,14 +20,27 @@ internal class CreateLoanEndpoint : Endpoint<CreateLoanRequest, CreateLoanRespon
 
     public override async Task HandleAsync(CreateLoanRequest req, CancellationToken ct)
     {
-        var loan = new Loan(req.Summary);
+        var lender = await _context.Lenders
+            .FirstOrDefaultAsync(x => x.Id == req.LenderId, cancellationToken: ct);
+
+        if (lender is null)
+        {
+            ThrowError("Lender not exists");
+        }
+        
+        var loan = new Loan(req.Summary, req.LenderId);
         await _context.Loans.AddAsync(loan, cancellationToken: ct);
         await _context.SaveChangesAsync(ct);
         
         var response = new CreateLoanResponse
         {
             Id = loan.Id,
-            Summary = loan.Summary
+            Summary = loan.Summary,
+            Lender = new LenderDto
+            {
+                Id = lender.Id,
+                Name = lender.Name
+            }
         };
         
         await SendAsync(response, cancellation: ct);
