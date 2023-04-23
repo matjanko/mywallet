@@ -10,7 +10,10 @@ internal class LoanConfiguration : IEntityTypeConfiguration<Loan>
     {
         builder.ToTable("loans");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
-        builder.Property(x => x.Summary).HasColumnName("summary").HasMaxLength(150);
+        builder.Property(x => x.Id).HasColumnName("loan_id").ValueGeneratedOnAdd();
+        builder.Property(x => x.LenderId).HasColumnName("lender_id").IsRequired();
+        builder.Property(x => x.Summary).HasColumnName("summary").HasMaxLength(150).IsRequired();
+
+        builder.HasOne<Lender>().WithMany().HasForeignKey(x => x.LenderId);
     }
 }
