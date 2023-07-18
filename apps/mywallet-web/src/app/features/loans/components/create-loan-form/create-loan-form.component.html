@@ -1,0 +1,29 @@
+<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Tytuł
+      <span title="required">*</span>
+    </label>
+    <input formControlName="summary" type="text" />
+  </div>
+  <div>
+    <label>Pożyczkodawca:</label>
+    <select></select>
+  </div>
+  <div>
+    <label>Data pierwszej raty:</label>
+    <input type="text" />
+  </div>
+  <div>
+    <label>Okres kredytowania</label>
+    <input type="text" />
+    <select></select>
+  </div>
+  <div>
+    <button>Generuj plan spłaty</button>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!loanForm.valid">Zapisz</button>
+    <button type="button" (click)="onCancel()">Anuluj</button>
+  </div>
+</form>

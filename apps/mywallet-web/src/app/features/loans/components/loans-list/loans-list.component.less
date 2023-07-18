@@ -1,0 +1,41 @@
+div.list-wrapper {
+  background-color: whitesmoke;
+  padding: 10px;
+
+  button {
+    background: none;
+    border: none;
+    &:hover {
+      background: lightgray;
+      transition: 0.5s;
+      border-radius: 5px;
+    }
+  }
+}
+
+div.list-header,
+div.list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    height: 38px;
+    width: 38px;
+  }
+  select {
+    padding-left: 12px;
+  }
+}
+
+div.list-content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  overflow: auto;
+  height: 400px;
+  app-loan-item:not(:last-child) a {
+    border-bottom: 1px solid lightgray;
+  }
+}

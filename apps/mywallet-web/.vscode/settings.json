@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.minimap.autohide": true,
+  "window.zoomLevel": -0.7,
+  "debug.toolBarLocation": "docked"
+}

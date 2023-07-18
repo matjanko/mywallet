@@ -1,0 +1,22 @@
+<div class="list-wrapper">
+  <div class="list-header">
+    <select>
+      <option>Aktywne</option>
+      <option>Zakończone</option>
+    </select>
+    <div>
+      <button class="pi pi-sort-amount-down"></button>
+      <button class="pi pi-refresh"></button>
+    </div>
+  </div>
+  <div class="list-content">
+    <ng-container *ngFor="let loan of loans$ | async">
+      <app-loan-item [loan]="loan"></app-loan-item>
+    </ng-container>
+  </div>
+  <div class="list-footer">
+    <button class="pi pi-arrow-left"></button>
+    <div>1-6 z 6</div>
+    <button class="pi pi-arrow-right"></button>
+  </div>
+</div>
