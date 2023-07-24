@@ -1,0 +1,23 @@
+@navbarHeight: 50px;
+
+.navbar {
+  height: @navbarHeight;
+}
+
+.page {
+  display: flex;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: @navbarHeight;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .menubar {
+    width: 250px;
+  }
+
+  .content {
+    padding: 40px;
+  }
+}

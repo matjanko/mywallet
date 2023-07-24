@@ -1,0 +1,23 @@
+<div [ngClass]="{ menubar__container: true }">
+  <div *ngFor="let element of elements" [ngClass]="{ menubar__element: true }">
+    <div *ngIf="element.header" [ngClass]="{ menubar__element__header: true }">
+      {{ element.header }}
+    </div>
+    <a
+      *ngFor="let item of element.items"
+      [ngClass]="{ menubar__item: true }"
+      [routerLink]="item.link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <div [ngClass]="{ menubar__item__icon: true }">
+        <span
+          *ngIf="item.icon as icon"
+          [class]="'pi ' + icon.name"
+          [style.color]="icon.color"
+        ></span>
+      </div>
+      <span class="menubar__item__name">{{ item.name }}</span>
+    </a>
+  </div>
+</div>
