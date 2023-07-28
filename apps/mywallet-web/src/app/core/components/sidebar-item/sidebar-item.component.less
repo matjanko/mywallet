@@ -1,20 +1,4 @@
-.menubar__container {
-  background: rgb(247, 247, 247);
-  height: 100%;
-  padding: 20px 15px;
-}
-
-.menubar__element {
-  padding: 10px 5px;
-
-  .menubar__element__header {
-    padding: 10px 10px;
-    color: rgb(180, 180, 180);
-    font-weight: bold;
-  }
-}
-
-.menubar__item {
+.sidebar-item {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -23,12 +7,12 @@
   border-radius: 10px;
   cursor: pointer !important;
   &.active {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(235, 235, 235) !important;
   }
   &:hover {
     background-color: rgb(240, 240, 240);
   }
-  .menubar__item__icon {
+  .sidebar-item__icon {
     width: 45px;
     display: flex;
     justify-content: center;
@@ -38,7 +22,7 @@
     }
   }
 
-  .menubar__item__name {
+  .sidebar-item__name {
     color: rgb(78, 78, 78);
     padding-left: 10px;
   }

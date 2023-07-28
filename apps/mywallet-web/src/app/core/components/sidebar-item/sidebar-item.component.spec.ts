@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoansPageComponent } from './loans-page.component';
+import { SidebarItemComponent } from './sidebar-item.component';
 
-describe('LoansPageComponent', () => {
-  let component: LoansPageComponent;
-  let fixture: ComponentFixture<LoansPageComponent>;
+describe('SidebarItemComponent', () => {
+  let component: SidebarItemComponent;
+  let fixture: ComponentFixture<SidebarItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoansPageComponent ]
+      declarations: [ SidebarItemComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LoansPageComponent);
+    fixture = TestBed.createComponent(SidebarItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

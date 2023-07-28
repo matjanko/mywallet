@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SidebarCategory } from 'src/app/components/sidebar/sidebar.interface';
+import { SidebarCategory } from 'src/app/core/components/sidebar/sidebar.interface';
 
 @Component({
   selector: 'app-main-layout',
@@ -20,6 +20,7 @@ export class MainLayoutComponent {
           },
           { name: 'Saldo', icon: { name: 'pi-wallet', color: 'orange' } },
           { name: 'Samochody', icon: { name: 'pi-car', color: 'pink' } },
+          { name: 'Opłaty', icon: { name: 'pi-flag', color: 'red' } },
         ],
       },
       {

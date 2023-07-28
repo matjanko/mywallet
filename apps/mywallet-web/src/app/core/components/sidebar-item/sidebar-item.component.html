@@ -1,0 +1,15 @@
+<a
+  class="sidebar-item"
+  [routerLink]="item.link"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  <div class="sidebar-item__icon">
+    <span
+      *ngIf="item.icon as icon"
+      [class]="'pi ' + icon.name"
+      [style.color]="icon.color"
+    ></span>
+  </div>
+  <span class="sidebar-item__name">{{ item.name }}</span>
+</a>

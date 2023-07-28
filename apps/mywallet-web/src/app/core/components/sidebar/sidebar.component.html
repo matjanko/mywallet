@@ -1,0 +1,10 @@
+<div [ngClass]="{ menubar__container: true }">
+  <div *ngFor="let element of elements" [ngClass]="{ menubar__element: true }">
+    <div *ngIf="element.header" [ngClass]="{ menubar__element__header: true }">
+      {{ element.header }}
+    </div>
+    <ng-container *ngFor="let item of element.items">
+      <app-sidebar-item [item]="item"></app-sidebar-item>
+    </ng-container>
+  </div>
+</div>
